@@ -1,1 +1,1 @@
-# Emirate-Studio-Landing-page
+# Emirate-Studios-Landing-page
