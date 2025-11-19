@@ -1,157 +1,49 @@
-/* ===== Root Variables ===== */
 :root {
-  --color-bg: #FFFFFF; /* main background */
-  --color-text: #000000; /* main text color */
-  --color-accent: #F8D64E; /* yellow/gold */
-  --color-accent-hover: #E0BF4A; /* darker gold for hover */
+  --color-bg: #FFFFFF;
+  --color-text: #000000;
+  --color-accent: #F8D64E;
+  --color-accent-hover: #E0BF4A;
   --font-primary: 'Poppins', sans-serif;
 }
 
-/* ===== Global Styles ===== */
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-primary);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
+/* Global Styles */
+body { margin:0; padding:0; font-family:var(--font-primary); background-color:var(--color-bg); color:var(--color-text); line-height:1.6; }
+h1,h2,h3{margin:0 0 20px 0;font-weight:700;}
+h1{font-size:3rem;} h2{font-size:2rem;} h3{font-size:1.5rem;}
 
-/* ===== Headings ===== */
-h1, h2, h3 {
-  color: var(--color-text);
-  font-weight: 700;
-  margin-bottom: 20px;
-}
+/* Buttons */
+button, .cta-button { background-color:var(--color-accent); color:var(--color-text); border:none; border-radius:6px; padding:12px 28px; font-weight:600; cursor:pointer; transition:all 0.3s ease; text-transform:uppercase; }
+button:hover, .cta-button:hover{background-color:var(--color-accent-hover);}
 
-h1 {
-  font-size: 3rem;
-}
+/* Links */
+a{text-decoration:none;color:var(--color-accent);} a:hover{color:var(--color-accent-hover);}
 
-h2 {
-  font-size: 2rem;
-}
+/* Sections */
+.section{padding:60px 20px;}
 
-h3 {
-  font-size: 1.5rem;
-}
+/* Hero Section Placeholder */
+.hero{position:relative;text-align:center;color:var(--color-bg);}
+.hero-video-placeholder{width:100%;height:400px;background-color:#000000;color:#fff;display:flex;justify-content:center;align-items:center;font-size:1.5rem;margin-bottom:20px;}
+.hero-content h1{color:var(--color-text);}
 
-/* ===== Buttons ===== */
-button, .cta-button {
-  background-color: var(--color-accent);
-  color: var(--color-text);
-  border: none;
-  border-radius: 6px;
-  padding: 12px 28px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
+/* Services */
+.services-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.service-item{padding:20px;border-radius:6px;border:1px solid #eee; background-color:#f9f9f9;}
 
-button:hover, .cta-button:hover {
-  background-color: var(--color-accent-hover);
-}
+/* Portfolio Placeholders */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.portfolio-placeholder{background-color:#ddd;color:#555;height:200px;display:flex;justify-content:center;align-items:center;font-weight:bold;border-radius:6px;}
 
-/* ===== Links ===== */
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  color: var(--color-accent-hover);
-}
-
-/* ===== Sections ===== */
-.section {
-  padding: 60px 20px;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  text-align: center;
-  color: var(--color-bg);
-}
-
-.hero h1 {
-  color: var(--color-text);
-  margin-top: 0;
-}
-
-.hero-video {
-  width: 100%;
-  max-height: 600px;
-  object-fit: cover;
-}
-
-/* Portfolio / Gallery */
-.portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.portfolio img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-
-.portfolio img:hover {
-  transform: scale(1.05);
-}
-
-/* Testimonials */
-.testimonial {
-  background-color: #f4f4f4;
-  padding: 30px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  text-align: center;
-}
+/* Lead Form */
+.lead-form form{display:flex;flex-direction:column;max-width:500px;margin:auto;gap:15px;}
+.lead-form input,.lead-form select{padding:12px;border-radius:6px;border:1px solid #ccc;}
 
 /* Footer */
-footer {
-  background-color: #000000;
-  color: var(--color-bg);
-  padding: 40px 20px;
-  text-align: center;
-}
+footer{background-color:#000;color:#fff;padding:40px 20px;text-align:center;}
 
-/* WhatsApp Floating Button */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #25D366;
-  color: #fff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 28px;
-  z-index: 1000;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-}
+/* WhatsApp Button */
+.whatsapp-btn{position:fixed;bottom:30px;right:30px;background-color:#25D366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;justify-content:center;align-items:center;font-size:28px;z-index:1000;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.2);transition:transform 0.3s;}
+.whatsapp-btn:hover{transform:scale(1.1);}
 
 /* Responsive */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-}
+@media(max-width:768px){h1{font-size:2rem;} h2{font-size:1.5rem;}}
