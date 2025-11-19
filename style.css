@@ -1,185 +1,157 @@
-/* Custom Styles for Emirates Studios */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===== Root Variables ===== */
+:root {
+  --color-bg: #FFFFFF; /* main background */
+  --color-text: #000000; /* main text color */
+  --color-accent: #F8D64E; /* yellow/gold */
+  --color-accent-hover: #E0BF4A; /* darker gold for hover */
+  --font-primary: 'Poppins', sans-serif;
 }
 
+/* ===== Global Styles ===== */
 body {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
+/* ===== Headings ===== */
+h1, h2, h3 {
+  color: var(--color-text);
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-/* Custom Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+h1 {
+  font-size: 3rem;
 }
 
-.animate-fadeInUp {
-    animation: fadeInUp 0.8s ease-out forwards;
+h2 {
+  font-size: 2rem;
 }
 
-.animation-delay-200 {
-    animation-delay: 0.2s;
-    opacity: 0;
+h3 {
+  font-size: 1.5rem;
 }
 
-.animation-delay-400 {
-    animation-delay: 0.4s;
-    opacity: 0;
+/* ===== Buttons ===== */
+button, .cta-button {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
-/* Video Background Optimization */
-#heroVideo {
-    pointer-events: none;
+button:hover, .cta-button:hover {
+  background-color: var(--color-accent-hover);
 }
 
-/* Ensure video covers properly on all devices */
-@media (max-aspect-ratio: 16/9) {
-    #heroVideo {
-        width: auto;
-        height: 100%;
-    }
+/* ===== Links ===== */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Hide video on mobile for performance */
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 60px 20px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: var(--color-bg);
+}
+
+.hero h1 {
+  color: var(--color-text);
+  margin-top: 0;
+}
+
+.hero-video {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+/* Portfolio / Gallery */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.portfolio img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio img:hover {
+  transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonial {
+  background-color: #f4f4f4;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #000000;
+  color: var(--color-bg);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    #heroVideo {
-        display: none;
-    }
-    
-    #hero {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    }
-}
-
-/* Loading State for Images */
-img {
-    loading: lazy;
-}
-
-/* Portfolio Slider Custom Styles */
-#portfolioSlider {
-    position: relative;
-}
-
-#sliderTrack {
-    display: flex;
-}
-
-/* Form Styling Enhancements */
-input[type="file"]::file-selector-button {
-    cursor: pointer;
-}
-
-/* Smooth Transitions */
-* {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Selection Color */
-::selection {
-    background-color: #D4AF37;
-    color: #000;
-}
-
-::-moz-selection {
-    background-color: #D4AF37;
-    color: #000;
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #D4AF37;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #C9A961;
-}
-
-/* Responsive Typography */
-@media (max-width: 640px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.875rem;
-    }
-    
-    h3 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Optimize for Performance */
-.backdrop-blur-md {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-/* Reduce Motion for Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Focus Styles for Accessibility */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-    outline: 2px solid #D4AF37;
-    outline-offset: 2px;
-}
-
-/* Print Styles */
-@media print {
-    #whatsappFloat,
-    nav,
-    footer {
-        display: none;
-    }
-}
-
-/* Loading Placeholder Animation */
-@keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
-    }
-}
-
-.loading-placeholder {
-    animation: shimmer 2s infinite;
-    background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
-    background-size: 1000px 100%;
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
 }
